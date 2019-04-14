@@ -45,6 +45,7 @@ body {
     margin: 0 10px;
     border: none;
     outline: none;
+    cursor: pointer;
     background: rgba(0, 0, 0, 0) url("../images/nav.png");
 }
 
