@@ -9,7 +9,6 @@ function SnakeInit() {
     'keyFlag': true
   };
   this.dom = {
-    'box': document.getElementById('box'),
     'audio': document.getElementById('sound'),
     'startBtn': document.getElementById('startBtn'),
     'snake': document.getElementById('snake'),
@@ -20,10 +19,6 @@ function SnakeInit() {
     'level': document.getElementById('level'),
     'mask': document.getElementById('canvas_mask'),
     'restart': document.getElementById('restart')
-  };
-  this.limit = {
-    'width': this.dom.box.offsetWidth,
-    'height': this.dom.canvas.offsetHeight
   };
   this.step = 30;
   this.direct = '';
@@ -58,7 +53,6 @@ function SnakeInit() {
 SnakeInit.prototype.init = function () {
   this.paintSnake();
   this.random = this.setFood();
-  console.log(this.random, this.limit.width, this.limit.height);
   this.flag.startFlag = false;
   this.move('right');
   this.bindKeyEvent();
@@ -135,8 +129,8 @@ SnakeInit.prototype.move = function (dir) {
   let that = this;
 
   this.timer = setInterval(function () {
-    let width = that.limit.width;
-    let height = that.limit.height;
+    let width = that.dom.canvas.offsetWidth;
+    let height = that.dom.canvas.offsetHeight;
     that.levelUp(dir);
     // 先移动，再判断
     switch (dir) {
@@ -236,8 +230,8 @@ SnakeInit.prototype.levelUp = function (dir) {
  * @returns {{x: number, y: number}} 返回食物所在位置的布尔值
  */
 SnakeInit.prototype.setFood = function () {
-  let randomX = Math.floor(Math.random() * (this.limit.width / this.step)) * this.step;
-  let randomY = Math.floor(Math.random() * (this.limit.height / this.step)) * this.step;
+  let randomX = Math.floor(Math.random() * (this.dom.canvas.offsetWidth / this.step)) * this.step;
+  let randomY = Math.floor(Math.random() * (this.dom.canvas.offsetHeight / this.step)) * this.step;
   this.dom.food.style.left = randomX + 'px';
   this.dom.food.style.top = randomY + 'px';
   this.dom.food.style.display = 'block';
