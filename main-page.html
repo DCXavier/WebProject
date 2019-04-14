@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/snake.js" async></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Gluttonous Snake</title>
+</head>
+<body>
+<audio id="sound" src="sound/move.wav"></audio>
+<h1 id="title" class="title">Gluttonous Snake 贪吃蛇</h1>
+<div id="box" class="box" tabindex="0">
+    <div id="nav" class="nav">
+        <a href="#" id="startBtn" class="btn">开始游戏</a>
+
+        <label class="label levelLabel" for="level">
+            Level: <span id="level" class="level">1</span>
+        </label>
+        <label class="label scoreLabel" for="score">
+            Score: <span id="score" class="score">0</span>
+        </label>
+    </div>
+    <div id="canvas" class="canvas">
+        <ul id="snake" class="snake">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="food" class="food"></div>
+    </div>
+    <div id="canvas_mask">
+        <h3>GAME OVER</h3>
+        <button id="restart">返回</button>
+    </div>
+</div>
+</body>
+</html>

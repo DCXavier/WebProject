@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: whitesmoke;
+}
+
+.title {
+    text-align: center;
+    font-size: 42px;
+    color: honeydew;
+    text-shadow: 0 0 14px slateblue;
+}
+
+.box {
+    position: relative;
+    width: 1200px;
+    height: 640px;
+    margin: 10px auto;
+    box-shadow: 0 0 15px dimgray;
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    color: orangered;
+    background: black;
+}
+
+.nav .btn {
+    display: inline-block;
+    width: 98px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-family: Consolas, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    color: ghostwhite;
+    margin: 0 10px;
+    background-image: url("../images/nav.png");
+}
+
+.nav .label {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.nav .levelLabel {
+    margin-top: 5px;
+    margin-left: 30%;
+    font-size: larger;
+    color: azure;
+}
+
+.nav .level {
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    font-size: 20px;
+    font-family: Corbel, sans-serif;
+    text-align: center;
+    color: crimson;
+    background-color: aliceblue;
+}
+
+.nav .scoreLabel {
+    margin-right: 40px;
+    float: right;
+}
+
+.nav .score {
+    margin-left: 20px;
+}
+
+.canvas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background-image: url("../images/bg.jpg");
+}
+
+.canvas .snake {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    list-style: none;
+    display: none;
+}
+
+.canvas .snake li {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: url('../images/body.png') 50% 50% no-repeat;
+    background-size: 28px 28px;
+}
+
+.canvas .snake li:nth-last-child(1) {
+    width: 30px;
+    height: 30px;
+    background: url("../images/head-right.png") round ;
+}
+
+.canvas .food {
+    position: absolute;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background: crimson;
+    box-shadow: 0 0 15px inset ghostwhite;
+    border-radius: 50%;
+}
+
+.box .canvas_mask {
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.box .canvas_mask h3 {
+    color: red;
+    font-family: Calibri, serif;
+    text-align: center;
+    font-size: 80px;
+    margin: 230px auto 0;
+}
+
+.box .canvas_mask button {
+    position: relative;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    border: none;
+    margin-left: 45%;
+    box-shadow: 0 0 15px black inset;
+    margin-top: 20px;
+    outline: none;
+}
+
