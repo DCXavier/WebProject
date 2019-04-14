@@ -275,6 +275,7 @@ SnakeInit.prototype.gameOver = function () {
     that.dom.score.innerText = '0';
     that.scoreCount = 0;
     that.setLevel = 1;
+    that.dom.level.innerText = that.setLevel;
     that.setSecond = 400;
     that.dom.food.style.display = 'none';
     that.dom.audio.pause();
